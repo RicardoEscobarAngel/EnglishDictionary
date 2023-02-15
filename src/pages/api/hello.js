@@ -2,11 +2,9 @@
 const BASE_URL = process.env.BASE_URL
 
 export default async function handler (req, res) {
-
-  const response = await fetch (`{$BASE_URL}/soap`)
+  const response = await fetch(`${BASE_URL}/soap`)
     .then(res => res.json())
     .then(res => {
-      console.log(res)
       return res
     })
 
