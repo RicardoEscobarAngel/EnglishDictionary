@@ -7,11 +7,9 @@ export default function Home () {
   const [result, setResult] = useState({})
 
   const handleSearch = () => {
-    console.log('Search term:', searchTerm)
     fetch(`/api/hello?word=${searchTerm}`)
       .then(res => res.json())
       .then(data => {
-        console.log('API response:', data)
         setResult(data)
       })
   }
@@ -31,6 +29,11 @@ export default function Home () {
           value={searchTerm}
           onChange={(e) => {
             setSearchTerm(e.target.value)
+          }}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter') {
+              handleSearch()
+            }
           }}
         />
         <button onClick={handleSearch}>Search</button>

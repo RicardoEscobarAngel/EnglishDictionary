@@ -2,11 +2,9 @@ const BASE_URL = 'https://api.dictionaryapi.dev/api/v2/entries/en'
 
 export default async function handler (req, res) {
   const { word } = req.query // Corrección del nombre de la propiedad a "query"
-  console.log('API request:', word)
   const response = await fetch(`${BASE_URL}/${word}`)
     .then((res) => res.json())
     .then((data) => {
-      console.log(data) // Imprimir la respuesta en la consola
       return {
         word: data[0].word,
         phonetics: data[0].phonetics,
