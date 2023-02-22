@@ -20,7 +20,7 @@ export default function Home () {
         <title>English Dictionary</title>
         <meta name="description" content="English dictionary in React and Next.js" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/logo.png" />
       </Head>
       <main>
         <h1>English Dictionary</h1>
